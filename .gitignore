@@ -1,0 +1,12 @@
+node_modules/
+coverage/
+*.tgz
+.DS_Store
+
+# Never commit local credentials, logs or Pi sessions.
+.env
+.env.*
+!.env.example
+.npmrc
+.pi/
+*.log

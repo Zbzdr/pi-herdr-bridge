@@ -1,0 +1,55 @@
+{
+  "name": "pi-herdr-bridge",
+  "version": "0.1.0",
+  "description": "Bridge Pi's blocking extension UI prompts to Herdr's waiting-for-user state.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Zbzdr",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zbzdr/pi-herdr-bridge.git"
+  },
+  "homepage": "https://github.com/Zbzdr/pi-herdr-bridge#readme",
+  "bugs": {
+    "url": "https://github.com/Zbzdr/pi-herdr-bridge/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "herdr",
+    "ui",
+    "notifications"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "files": [
+    "src/index.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test",
+    "prepack": "npm run check",
+    "prepublishOnly": "npm run check"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.4.0",
+    "@types/node": "^22.19.0",
+    "typescript": "^6.0.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
